@@ -1,27 +1,92 @@
-# DogApp
+# Dog App UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Dog App UI is a frontend application developed to display information about dog breeds. This application is built using Angular and provides users with detailed information about various dog breeds. Additionally, it includes a login screen for users to access the analytics report page.
 
-## Development server
+## Requirements
+- Node.js (v14 or higher)
+- Angular CLI (v12 or higher)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+### 1. Clone the Repository
+First, clone the project from GitHub:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+git clone https://github.com/mhmtcrkglu/dog-app.git
+cd dog-app
+```
 
-## Build
+### 2. Install Dependencies
+Install the project dependencies with:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+npm install
+```
 
-## Running unit tests
+### 3. Run the Application
+Start the Angular development server with:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+npm start
+```
 
-## Running end-to-end tests
+Open your browser and navigate to `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Components and Services
 
-## Further help
+### 1. Breed List
+URL: `/breeds/list`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Component: `BreedListComponent`
+- Description: Displays a paginated list of dog breeds.
+
+### 2. Breed Details
+URL: `/breeds/detail/:id`
+
+- Component: `BreedDetailComponent`
+- Description: Displays details of a selected dog breed.
+
+### 3. Analytics Report
+URL: `/analytics`
+
+- Component: `AnalyticsComponent`
+- Description: Displays analytics reports about dog breed requests.
+- Note: When a user navigates to the analytics report page, they will first encounter a login screen within the component. If the login is successful, they can view the report; otherwise, they cannot.
+
+### 4. Login Screen
+- Component: Included within `AnalyticsComponent`.
+- Description: Allows the user to log in. Upon successful login, the user can view the analytics reports.
+
+## Project Structure
+Project folder structure:
+
+```
+frontend/
+└── src/
+    └── app/
+        ├── analytics/
+        │   ├── analytics.component.css
+        │   ├── analytics.component.html
+        │   ├── analytics.component.spec.ts
+        │   └── analytics.component.ts
+        ├── breed-detail/
+        │   ├── breed-detail.component.css
+        │   ├── breed-detail.component.html
+        │   ├── breed-detail.component.spec.ts
+        │   └── breed-detail.component.ts
+        ├── breed-list/
+        │   ├── breed-list.component.css
+        │   ├── breed-list.component.html
+        │   ├── breed-list.component.spec.ts
+        │   └── breed-list.component.ts
+        ├── services/
+        │   └── breed.service.ts
+        ├── app-routing.module.ts
+        ├── app.component.css
+        ├── app.component.html
+        ├── app.component.ts
+        ├── app.module.ts
+        ├── breed-analytics.model.ts
+        ├── breed.model.ts
+        └── breed.service.ts
+```
