@@ -6,11 +6,11 @@
   }
   
   .mat-table {
-    width: 70%; /* Genişliği azaltın */
+    width: 70%;
   }
   
   .mat-header-cell, .mat-cell {
-    padding: 8px; /* Hücre içi boşlukları azaltın */
+    padding: 8px;
   }
   
   .mat-elevation-z8 {
@@ -22,22 +22,21 @@
   }
   
 
-  /* Ana container'ı ortalamak için flexbox kullanıyoruz */
 .form-container {
   display: flex;
-  justify-content: center; /* Yatayda ortalamak için */
-  align-items: center; /* Düşeyde ortalamak için */
-  height: 100vh; /* Ekranın yüksekliğini kapsayacak şekilde */
-  padding: 20px; /* Form etrafında boşluk bırakır */
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  padding: 20px; 
 }
 
 .login-form {
-  max-width: 400px; /* Formun maksimum genişliği */
-  width: 100%; /* Formun genişliği %100 olmalı ki responsive olsun */
-  background-color: #f9f9f9; /* Form arka plan rengi */
-  padding: 20px; /* Form içindeki boşluk */
-  border-radius: 8px; /* Kenar yuvarlama */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  max-width: 400px; 
+  width: 100%; 
+  background-color: #f9f9f9; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .form-group {
