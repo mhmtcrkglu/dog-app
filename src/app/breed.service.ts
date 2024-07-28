@@ -22,9 +22,9 @@ export class BreedService {
     return this.http.get<Breed>(`${this.baseUrl}/breeds/detail/${id}`);
   }
 
-  getAnalytics(): Observable<BreedAnalytics[]> {
+  getAnalytics(userName: string, password: string): Observable<BreedAnalytics[]> {
     const headers = new HttpHeaders({
-      Authorization: 'Basic ' + btoa('admin:password')
+      Authorization: 'Basic ' + btoa(`${userName}:${password}`)
     })
     return this.http.get<{ [key: number]: BreedAnalytics }>(`${this.baseUrl}/admin/report/tracking`, { headers })
     .pipe(map(response => Object.values(response)));

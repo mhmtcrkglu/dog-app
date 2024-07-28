@@ -10,7 +10,9 @@ import { BreedAnalytics } from '../breed-analytics.model';
   styleUrls: ['./analytics.component.css']
 })
 export class AnalyticsComponent implements OnInit {
-
+  isAuthenticated = false;
+  password: string = '';
+  userName: string = '';
   displayedColumns: string[] = ['breed-id', 'breed-name', 'click-count'];
   dataSource = new MatTableDataSource<BreedAnalytics>();
 
@@ -20,9 +22,14 @@ export class AnalyticsComponent implements OnInit {
   constructor(private breedService: BreedService) { }
 
   ngOnInit() {
-    this.breedService.getAnalytics().subscribe(data => {
-      this.dataSource.data = data;
-    });  
   }
 
+  onSubmit() {
+    this.breedService.getAnalytics(this.userName, this.password).subscribe(data => {
+      if(data != null){
+        this.dataSource.data = data;
+        this.isAuthenticated = true
+      }
+    });
+  }
 }
