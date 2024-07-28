@@ -1,0 +1,26 @@
+<div class="table-container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-table" multiTemplateDataRows>
+
+      <ng-container matColumnDef="breed-id">
+        <th mat-header-cell *matHeaderCellDef> Breed ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.breedId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="breed-name">
+        <th mat-header-cell *matHeaderCellDef> Breed Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.breedName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="click-count">
+        <th mat-header-cell *matHeaderCellDef> Click Count </th>
+        <td mat-cell *matCellDef="let element"> {{element.clickCount}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="dataSource.data.length" [pageSize]="dataSource.data.length" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

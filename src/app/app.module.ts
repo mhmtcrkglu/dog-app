@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BreedListComponent } from './breed-list/breed-list.component';
 import { BreedDetailComponent } from './breed-detail/breed-detail.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -27,7 +28,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   declarations: [
     AppComponent,
     BreedListComponent,
-    BreedDetailComponent
+    BreedDetailComponent,
+    AnalyticsComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Breed } from './breed.model';  
+import { BreedAnalytics } from './breed-analytics.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,10 @@ export class BreedService {
 
   getBreedDetails(id: string): Observable<Breed> {
     return this.http.get<Breed>(`${this.baseUrl}/breeds/detail/${id}`);
+  }
+
+  getAnalytics(): Observable<BreedAnalytics[]> {
+    return this.http.get<{ [key: number]: BreedAnalytics }>(`${this.baseUrl}/admin/report/tracking`)
+    .pipe(map(response => Object.values(response)));
   }
 }
