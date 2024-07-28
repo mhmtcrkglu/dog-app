@@ -61,7 +61,7 @@ URL: `/analytics`
 Project folder structure:
 
 ```
-frontend/
+dog-app/
 └── src/
     └── app/
         ├── analytics/
@@ -79,8 +79,6 @@ frontend/
         │   ├── breed-list.component.html
         │   ├── breed-list.component.spec.ts
         │   └── breed-list.component.ts
-        ├── services/
-        │   └── breed.service.ts
         ├── app-routing.module.ts
         ├── app.component.css
         ├── app.component.html
