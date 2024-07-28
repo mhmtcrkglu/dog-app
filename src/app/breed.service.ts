@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { Breed } from './breed.model';  
 
 @Injectable({
   providedIn: 'root'
 })
 export class BreedService {
 
-  constructor() { }
+  private baseUrl = 'http://localhost:8080';
+
+  constructor(private http: HttpClient) { }
+
+  getBreeds(size: number, page: number): Observable<Breed[]> {
+    return this.http.get<Breed[]>(`${this.baseUrl}/breeds/list/all?size=${size}&page=${page}`)
+  }
+  
+
+  getBreedDetails(id: string): Observable<Breed> {
+    return this.http.get<Breed>(`${this.baseUrl}/breeds/detail/${id}`);
+  }
 }
