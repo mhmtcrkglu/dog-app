@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Breed } from './breed.model';  
 import { BreedAnalytics } from './breed-analytics.model';
@@ -23,7 +23,10 @@ export class BreedService {
   }
 
   getAnalytics(): Observable<BreedAnalytics[]> {
-    return this.http.get<{ [key: number]: BreedAnalytics }>(`${this.baseUrl}/admin/report/tracking`)
+    const headers = new HttpHeaders({
+      Authorization: 'Basic ' + btoa('admin:password')
+    })
+    return this.http.get<{ [key: number]: BreedAnalytics }>(`${this.baseUrl}/admin/report/tracking`, { headers })
     .pipe(map(response => Object.values(response)));
   }
 }
