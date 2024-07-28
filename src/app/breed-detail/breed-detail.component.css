@@ -1,0 +1,44 @@
+.detail-container {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .detail-item {
+    margin-bottom: 8px;
+  }
+  
+  .label {
+    font-weight: bold;
+    display: inline-block;
+    width: 150px;
+  }
+  
+  .value {
+    display: inline-block;
+  }
+  
+  .reference-image {
+    display: block;
+    margin-top: 8px;
+    max-width: 200px; /* Resmi küçült */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

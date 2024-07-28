@@ -1,1 +1,29 @@
-<p>breed-detail works!</p>
+<div *ngIf="element" class="detail-container">
+  <button [routerLink]="['/breed']">Back to List</button>
+  <h2>{{ element.name }}</h2>
+  <div class="detail-item">
+    <span class="label">ID:</span> <span class="value">{{ element.id }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Weight:</span> <span class="value">{{ element.weight.imperial }} (Imperial), {{ element.weight.metric }} (Metric)</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Bred For:</span> <span class="value">{{ element.bred_for }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Breed Group:</span> <span class="value">{{ element.breed_group }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Life Span:</span> <span class="value">{{ element.life_span }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Temperament:</span> <span class="value">{{ element.temperament }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Origin:</span> <span class="value">{{ element.origin }}</span>
+  </div>
+  <div *ngIf="element.reference_image_id" class="detail-item">
+    <span class="label">Reference Image:</span>
+    <img [src]="'https://cdn2.thedogapi.com/images/' + element.reference_image_id + '.jpg'" alt="{{ element.name }}" class="reference-image">
+  </div>
+</div>
