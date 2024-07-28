@@ -18,7 +18,6 @@ export class BreedDetailComponent implements OnInit {
       this.breedId = params.get('id');
       if (this.breedId) {
         this.breedService.getBreedDetails(this.breedId).subscribe(data => {
-          debugger;
           this.element = data;
         });
       }

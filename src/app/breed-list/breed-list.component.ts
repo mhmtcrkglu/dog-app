@@ -25,7 +25,6 @@ export class BreedListComponent implements OnInit {
   loadData(page: number, size: number) {
     this.breedService.getBreeds(size, page).subscribe({
       next: (data) => {
-        debugger;
         this.dataSource.data = data;
         this.paginator.pageIndex = page;
         this.paginator.length = 100;
@@ -38,7 +37,6 @@ export class BreedListComponent implements OnInit {
   }
 
   toggleDetails(element: any) {
-    debugger;
     this.expandedElement = this.expandedElement === element ? null : element;
   }
 }
